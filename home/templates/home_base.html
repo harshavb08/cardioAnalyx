@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Cardio Analyx - Home</title>
+  <meta content="" name="description">
+
+  <meta content="" name="keywords">
+  <link rel="manifest" href="/static/assets/manifest.json" />
+<!-- ios support -->
+<link rel="apple-touch-icon" href="/static/assets/images/icons/icon-72x72.png" />
+<link rel="apple-touch-icon" href="/static/assets/images/icons/icon-96x96.png" />
+<link rel="apple-touch-icon" href="/static/assets/images/icons/icon-128x128.png" />
+<link rel="apple-touch-icon" href="/static/assets/images/icons/icon-144x144.png" />
+<link rel="apple-touch-icon" href="/static/assets/images/icons/icon-152x152.png" />
+<link rel="apple-touch-icon" href="/static/assets/images/icons/icon-192x192.png" />
+<link rel="apple-touch-icon" href="/static/assets/images/icons/icon-384x384.png" />
+<link rel="apple-touch-icon" href="/static/assets/images/icons/icon-512x512.png" />
+<meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+<meta name="theme-color" content="#db4938" />
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/images/icons/icon-72x72.png' %}" rel="icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+          <!-- <style>
+           .skiptranslate, #google_translate_element {display: none;}
+            body {min-height: 0px !important; position: static !important; top: 0px !important;}
+        </style> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+</head>
+
+<body>
+
+  {% block content %} {% endblock %}
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script src="{% static 'assets/js/serviceWorkers.js' %}"></script>
+  <script type="text/javascript">
+    setInterval(function() {
+      $('goog-close-link').click()
+      $('goog-close-link').click() 
+    }, 2500)
+  </script>
+  <style type="text/css">
+    .goog-te-banner-frame.skiptranslate {
+      display: none !important;
+    }
+    body {
+      top: 0px !important;
+    }
+  </style>
+</body>
+
+</html>

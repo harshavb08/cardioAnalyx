@@ -1,0 +1,129 @@
+<main>
+    
+    <div class="row container-xl ">
+        <br><br>
+        <div class="col-xxl-4">
+            <br>
+            <div class="card">
+                <div class="card-body p-5">
+                  <h3>Doctors waiting for approval</h3>
+                  <br>
+                   <table id="example" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Id. Card</th>
+                                <th>Medical License</th>
+                                <th>Registration Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for doctor in doctor_not_active %}
+                            <tr>
+                            <td>{{ doctor.id }}</td>
+                            <td>{{ doctor.user.first_name }} {{ doctor.user.last_name }}</td>
+                            <td><a href="{{ doctor.identity_card_url }}" target="_blank">Show</a></td>
+                            <td><a href="{{ doctor.medical_license_url }}" target="_blank">Show</a></td>
+                            <td>{{ doctor.created_at }}</td>
+                            <td>
+
+                                <button class="btn btn-primary btn-sm">View</button>  
+                                <button class="btn btn-success btn-sm" onclick="approve({{ doctor.id }})">Approval</button>
+                                 
+                                <button class="btn btn-danger btn-sm" onclick="deny({{ doctor.id }})">Deny</button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Id. Card</th>
+                                <th>Medical License</th>
+                                <th>Registration Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            
+            </div>
+        </div>
+        <div class="col-xxl-4">
+            <br>
+            <div class="card">
+                <div class="card-body p-5">
+                  <h3>All Doctors</h3>
+                  <br>
+                   <table id="example2" class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Identity Card</th>
+                            <th>Medical License</th>
+                            <th>Registration Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for doctor in doctors %}
+                            <tr>
+                            <td>{{ doctor.id }}</td>
+                            <td>{{ doctor.user.first_name }} {{ doctor.user.last_name }}</td>
+                            <td><a href="{{ doctor.identity_card_url }}" alt="">Show</a></td>
+                            <td><a href="{{ doctor.medical_license_url }}">Show</a></td>
+                            <td>12/11/2022</td>
+                            <td><button class="btn btn-primary btn-md">View</button></td>
+
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Identity Card</th>
+                            <th>Medical License</th>
+                            <th>Registration Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+</main>
+<script type="text/javascript">
+  $(document).ready(function () {
+        $('#example').DataTable();
+    });
+
+  function approve(id) {
+    $.get("approve_doctor/?doctor_id=" + id, function(res){
+        let data = JSON.parse(res)
+        if(data['status'] == 200){
+            siJs.reload()
+        }
+    })
+  }
+
+  function deny(id) {
+    $.get("deny_doctor/?doctor_id=" + id, function(res){
+        let data = JSON.parse(res)
+        if(data['status'] == 200){
+            siJs.reload()
+        }
+    })
+  }
+
+  function deny() {
+
+  }
+</script>

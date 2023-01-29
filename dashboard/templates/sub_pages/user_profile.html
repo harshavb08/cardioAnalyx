@@ -1,0 +1,138 @@
+<main>
+    <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
+        <div class="container-xl px-4">
+            <div class="page-header-content">
+                <div class="row align-items-center justify-content-between pt-3">
+                    <div class="col-auto mb-3">
+                        <h1 class="page-header-title">
+                            <div class="page-header-icon"><i data-feather="user"></i></div>
+                            Account Settings - Profile
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main page content-->
+    <div class="container-xl px-4 mt-4">
+        <!-- Account page navigation-->
+        <nav class="nav nav-borders">
+            <a class="nav-link active ms-0" href="#!">Profile</a>
+            <a class="nav-link" href="javascript:open_profile_security()">Security</a>
+        </nav>
+        <hr class="mt-0 mb-4" />
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                    <div class="card-header">Account Details</div>
+                    <div class="card-body">
+                        <form action="user_profile/" method="POST" id="user_update">
+                            <!-- Form Group (username)-->
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputUsername">Username</label>
+                                <input class="form-control" name="username" id="inputUsername" required type="text" placeholder="Enter your username" value="{{ request.user.username }}" />
+                            </div>
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (first name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputFirstName">First name</label>
+                                    <input class="form-control" name="first_name" id="inputFirstName" type="text" placeholder="Enter your first name" value="{{ request.user.first_name }}" />
+                                </div>
+                                <!-- Form Group (last name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputLastName">Last name</label>
+                                    <input class="form-control" name="last_name" id="inputLastName" type="text" placeholder="Enter your last name" value="{{ request.user.last_name }}" />
+                                </div>
+                            </div>
+                            <!-- Form Row        -->
+                            <!-- Form Group (email address)-->
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                                <input class="form-control" name="email" id="inputEmailAddress" required type="email" placeholder="Enter your email address" value="{{ request.user.email }}" />
+                            </div>
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (birthday)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputGender">Gender</label>
+                                    <select class="form-control"  id="inputGender" type="text" name="gender">
+                                        <option value="Gender" {% if profile.gender == "unknown" %} selected {% endif %}>Gender</option>
+                                        <option value="Male" {% if profile.gender == "Male" %} selected {% endif %}>Male</option>
+                                        <option value="Female" {% if profile.gender == "Female" %} selected {% endif %}>Female</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputBirthday">Birthday</label>
+                                    <input class="form-control"  id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="{{ profile.birthday }}" />
+                                </div>
+                            </div>
+                            <!-- Save changes button-->
+                            {% csrf_token %}
+                            <button class="btn btn-primary" type="submit">Save changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+<style>
+</style>
+<script type="text/javascript">
+
+var pages = ["index0", "index1"]
+
+var current = 0
+function next() {
+    let prev = document.getElementById(pages[current])
+    prev.style.visibility = 'hidden'
+    prev.style.display = 'none'
+    current++
+    let next = document.getElementById(pages[current])
+    next.style.visibility = 'visible'
+    next.style.display = 'block'
+}
+function prev() {
+    let cur = document.getElementById(pages[current])
+    cur.style.visibility = 'hidden'
+    cur.style.display = 'none'
+    current--
+    let next = document.getElementById(pages[current])
+    next.style.visibility = 'visible'
+    next.style.display = 'block'
+}
+function goTo(index) {
+    let cur = document.getElementById(pages[current])
+    cur.style.visibility = 'hidden'
+    cur.style.display = 'none'
+
+    let next = document.getElementById(pages[index])
+    next.style.visibility = 'visible'
+    next.style.display = 'block'
+
+    current = index
+}
+
+siJs.preAjax("user_update", function (res) {
+    onDone()
+})
+
+function update_profile() {
+    let data = {
+        username: $("inputUsername").val(),
+        first_name: $("inputUsername").val(),
+        last_name: $("inputLastName").val(),
+        email: $("inputEmailAddress").val(),
+        birthday: $("inputBirthday").val(),
+    }
+    $.post("", data, onDone);
+
+}
+
+function onDone() {
+    showSuccess("Success", "User profile updated successfully")
+}
+  
+</script>

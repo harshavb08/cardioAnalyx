@@ -1,0 +1,90 @@
+<!-- Sidebar -->
+<div id="layoutSidenav_nav">
+    <!-- <nav class="sidenav shadow-right sidenav-light">
+        <div class="sidenav-menu">
+            <div class="nav accordion" id="accordionSidenav">
+                <div class="sidenav-menu-heading d-sm-none">Account</div>
+
+                <a class="nav-link d-sm-none" href="#!">
+                    <div class="nav-link-icon"><i data-feather="bell"></i></div>
+                    Alerts
+                    <span class="badge bg-warning-soft text-warning ms-auto">4 New!</span>
+                </a>
+
+                <a class="nav-link d-sm-none" href="#!">
+                    <div class="nav-link-icon"><i data-feather="mail"></i></div>
+                    Messages
+                    <span class="badge bg-success-soft text-success ms-auto">2 New!</span>
+                </a>
+                {% if request.user.is_superuser %}
+                <div class="sidenav-menu-heading">Core</div>
+                <a class="nav-link " href="javascript:void(0);">
+                    <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                    Dashboard
+                </a>
+                <div class="sidenav-menu-heading">Utilisateur</div>
+                <a class="nav-link" href="javascript:user_list()" >
+                    <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                    Manage doctors
+                </a>
+                {% else %}
+                <div class="sidenav-menu-heading">Gestion des données</div>
+                <a class="nav-link" href="javascript:new_analyse()">
+                    <div class="nav-link-icon"><i data-feather="plus"></i></div>
+                    New analyse
+                </a>
+                <a class="nav-link" href="javascript:list_analyse()">
+                    <div class="nav-link-icon"><i data-feather="list"></i></div>
+                    Patient history
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="sidenav-footer">
+            <div class="sidenav-footer-content">
+                <div class="sidenav-footer-subtitle">Connecter en tant que:</div>
+                <div class="sidenav-footer-title">{{ request.user.username }}</div>
+            </div>
+        </div>
+    </nav>  -->
+</div>
+
+<style type="text/css">
+     @media only screen and (max-width: 460px) {
+    #layoutSidenav_nav {
+        display: block;
+    }
+}
+    @media only screen and (min-width: 600px) {
+    #layoutSidenav_nav {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #layoutSidenav_nav {
+        display: block;
+    }
+}
+@media only screen and (min-width: 992px) {
+    #layoutSidenav_nav {
+        display: none;
+    }
+}
+
+</style> 
+
+<script type="text/javascript">
+    function new_analyse() {
+        siJs.route('new_analyse/')
+    }
+    function list_analyse() {
+        siJs.route('list_analyse/')
+    }
+    {% if request.user.is_superuser %}
+    function user_list() {
+        siJs.route('user_lists/')
+    }
+    {% endif %}
+</script>
+<!-- End of Sidebar -->

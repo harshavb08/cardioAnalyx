@@ -1,0 +1,421 @@
+<section id="about" class="values">
+    <div class="row">
+        <div class="container col-lg-12">
+            <header class="section-header">
+                <p>Upload your X-Ray file</p>
+            </header>
+
+            <div>
+
+                <form id="file-upload-form" class="uploader">
+                    <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+
+                    <label for="file-upload" id="file-drag">
+            <img id="file-image" src="#" alt="Preview" class="hidden">
+            <div id="start">
+              <i class="fa fa-download" aria-hidden="true"></i>
+              <div>Select a file or drag here</div>
+            </div>
+            <div id="response" class="hidden">
+              <div id="messages"></div>
+            </div>
+          </label>
+
+                    <center><button type="button" class="btn btn-lg btn-primary" style="float: center;" onclick="submit_xray()">Submit</button></center>
+                    <div class="alert alert-danger" id="alert_no_input" style="display: none">Please submit a x-ray file</div>
+                </form>
+            </div>
+        </div>
+        <header class="section-header">
+            <a href="javascript:goTo(4)">
+                <p style="font-size:24px; padding-top: 20px;" class="not_have_xray">Don't have an X-Ray?</p>
+            </a>
+        </header>
+    </div>
+</section>
+<section id="ask1" style="visibility: hidden; display: none; padding: 20px" class="values" class="">
+    <div class="row align-items-center justify-content-evenly">
+        <div class="col-lg-6" style="float: center">
+            <header class="section-header">
+
+                <p>Instruction</p>
+            </header>
+            <div>
+                <div class="row justify-content-center">
+                    <center>
+                        <p style="font-size: 24px">Please fill out the Survey Ahead, to determine if you have a risk Of cardiomegaly.</p>
+                    </center>
+                    <div class="row">
+                        <br>
+                        <center>
+                            <br>
+                            <br>
+                            <br>
+                            <br><br><br><br><br>
+                            <button class="btn btn-lg btn-primary" style="float: center; width: 100px;" onclick="next()">Next</button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="ask2" style="visibility: hidden; display: none; padding: 20px; padding-top: 40px;" class="values" class="">
+    <div class="row align-items-center justify-content-evenly">
+        <div class="col-lg-6" style="float: center">
+            <br><br>
+            <header class="section-header">
+                <p>Does any member of your family suffered from cardiomegaly.</p>
+            </header>
+            <div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <label style="height: 60px;">
+                <input type="radio" name="radio" style="min-height: 80px;" />
+                <span>Yes</span>
+              </label>
+                    </div>
+                    <div class="col-lg-12">
+                        <label style="height: 60px;">
+                <input type="radio" name="radio" style="min-height:80px"/>
+                <span>No</span>
+              </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <br>
+                    <br><br><br><br><br><br>
+                    <center>
+                        <button class="btn btn-lg btn-primary" style="float: center; width: 100px;" onclick="next()">Next</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="ask3" style="visibility: hidden; display: none; padding: 20px" class="values" class="">
+    <div class="row align-items-center justify-content-evenly">
+        <div class="col-lg-6" style="float: center">
+            <header class="section-header">
+                <p>Have you felt vomiting recently?</p>
+            </header>
+            <div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <label style="height: 60px;">
+                <input type="radio" name="radio" style="min-height: 80px;" />
+                <span>Yes</span>
+              </label>
+                    </div>
+                    <div class="col-lg-12">
+                        <label style="height: 60px;">
+                <input type="radio" name="radio" style="min-height:80px"/>
+                <span>No</span>
+              </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <br>
+                    <br><br><br><br><br><br>
+                    <center>
+                        <button class="btn btn-lg btn-primary" style="float: center; width: 100px;" onclick="next()">Next</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="ask4" style="visibility: hidden; display: none; padding: 20px" class="values" class="">
+    <div class="row align-items-center justify-content-evenly">
+        <div class="col-lg-6" style="float: center">
+            <header class="section-header">
+                <p>Have you recently experienced faints?</p>
+            </header>
+            <div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <label style="height: 60px;">
+                <input type="radio" name="radio" style="min-height: 80px;" />
+                <span>Yes</span>
+              </label>
+                    </div>
+                    <div class="col-lg-12">
+                        <label style="height: 60px;">
+                <input type="radio" name="radio" style="min-height:80px"/>
+                <span>No</span>
+              </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <br>
+                    <br><br><br><br><br><br>
+                    <center>
+                        <button class="btn btn-lg btn-primary" style="float: center; width: 100px;" onclick="next()">Next</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="ask5" style="visibility: hidden; display: none; padding: 20px" class="values" class="">
+    <div class="row align-items-center justify-content-evenly">
+        <div class="col-lg-6" style="float: center">
+            <header class="section-header">
+                <p>Have felt unusual headaches recently?</p>
+            </header>
+            <div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <label style="height: 60px;">
+                <input type="radio" name="radio" style="min-height: 80px;" />
+                <span>Yes</span>
+              </label>
+                    </div>
+                    <div class="col-lg-12">
+                        <label style="height: 60px;">
+                <input type="radio" name="radio" style="min-height:80px"/>
+                <span>No</span>
+              </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <br>
+                    <br><br><br><br><br><br>
+                    <center>
+                        <button class="btn btn-lg btn-primary" style="float: center; width: 100px;" onclick="next()">Next</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="ask6" style="visibility: hidden; display: none; padding: 20px" class="values" class="">
+    <div class="row align-items-center justify-content-evenly">
+        <div class="col-lg-6" style="float: center">
+            <header class="section-header">
+                <p>Have you experienced swelling, especially in the legs, feet or abdomen.</p>
+            </header>
+            <div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <label style="height: 60px;">
+                <input type="radio" name="radio" style="min-height: 80px;" />
+                <span>Yes</span>
+              </label>
+                    </div>
+                    <div class="col-lg-12">
+                        <label style="height: 60px;">
+                <input type="radio" name="radio" style="min-height:80px"/>
+                <span>No</span>
+              </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <br>
+                    <br><br><br><br><br><br>
+                    <center>
+                        <button class="btn btn-lg btn-primary" style="float: center; width: 100px;" onclick="next()">Next</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="ask7" style="visibility: hidden; display: none; padding: 20px" class="values" class="">
+    <div class="row align-items-center justify-content-evenly">
+        <div class="col-lg-6" style="float: center">
+            <header class="section-header">
+                <p>Have you been experiencing tiredness recently?</p>
+            </header>
+            <div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <label style="height: 60px;">
+                <input type="radio" name="radio" style="min-height: 80px;" />
+                <span>Yes</span>
+              </label>
+                    </div>
+                    <div class="col-lg-12">
+                        <label style="height: 60px;">
+                <input type="radio" name="radio" style="min-height:80px"/>
+                <span>No</span>
+              </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <br>
+                    <br><br><br><br><br><br>
+                    <center>
+                        <button class="btn btn-lg btn-primary" style="float: center; width: 100px;" onclick="next()">Next</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="ask8" style="visibility: hidden; display: none; padding: 20px" class="values" class="">
+    <div class="row align-items-center justify-content-evenly">
+        <div class="col-lg-6" style="float: center">
+            <header class="section-header">
+                <p>Have you been experiencing heart fluttering recently?</p>
+            </header>
+            <div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <label style="height: 60px;">
+                <input type="radio" name="radio" style="min-height: 80px;" />
+                <span>Yes</span>
+              </label>
+                    </div>
+                    <div class="col-lg-12">
+                        <label style="height: 60px;">
+                <input type="radio" name="radio" style="min-height:80px"/>
+                <span>No</span>
+              </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <br>
+                    <br><br><br><br><br><br>
+                    <center>
+                        <button class="btn btn-lg btn-primary" style="float: center; width: 100px;" onclick="next()">Next</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="ask9" style="visibility: hidden; display: none; padding: 20px" class="values" class="">
+    <div class="row align-items-center justify-content-evenly">
+        <div class="col-lg-6" style="float: center">
+            <header class="section-header">
+                <p>Have you been experiencing shortness of breath?</p>
+            </header>
+            <div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <label style="height: 60px;">
+                <input type="radio" name="radio" style="min-height: 80px;" />
+                <span>Yes</span>
+              </label>
+                    </div>
+                    <div class="col-lg-12">
+                        <label style="height: 60px;">
+                <input type="radio" name="radio" style="min-height:80px"/>
+                <span>No</span>
+              </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <br>
+                    <br><br><br><br><br><br>
+                    <center>
+                        <button class="btn btn-lg btn-primary" style="float: center; width: 100px;" onclick="next()">Next</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="ask10" style="visibility: hidden; display: none; padding: 20px" class="values" class="">
+    <div class="row align-items-center justify-content-evenly">
+        <div class="col-lg-6" style="float: center">
+            <header class="section-header">
+                <p>Do you have kidney failure?</p>
+            </header>
+            <div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <label style="height: 60px;">
+                <input type="radio" name="radio" style="min-height: 80px;" />
+                <span>Yes</span>
+              </label>
+                    </div>
+                    <div class="col-lg-12">
+                        <label style="height: 60px;">
+                <input type="radio" name="radio" style="min-height:80px"/>
+                <span>No</span>
+              </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <br>
+                    <br><br><br><br><br><br>
+                    <center>
+                        <button class="btn btn-lg btn-primary" style="float: center; width: 100px;" onclick="goToloader()">Next</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="progress" style="visibility: hidden; display: none; padding: 20px" class="values" class="">
+    <div class="row align-items-center justify-content-evenly">
+        <div class="col-lg-6" style="float: center; min-height: 500px">
+            <div>
+                <div class="row justify-content-center">
+                    <div class="row">
+                        <br>
+                        <center>
+                            <div class="loader" style="margin-top: 200px">Loading...</div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="result" style="visibility: hidden; display: none; padding: 20px" class="values" class="">
+    <div class="row align-items-center justify-content-evenly">
+        <div class="col-lg-6" style="float: center; min-height: 500px">
+            <header class="section-header">
+                <p>Test Result</p>
+            </header>
+            <div>
+                <div class="row justify-content-center">
+                    <div class="row">
+                        <br>
+                        <center>
+                            <h1>Cardiomegaly: <span style="color: red; font-weight: bold;">True</span></h1>
+                            <div>
+                                <canvas id="myChart" style="max-height: 300px; width: 200px;"></canvas>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <p class="col-lg-12 alert alert-warning">Please Consult The Doctor</p>
+                                <br><br><br><br>
+                                <div class="col-lg-12">
+                                    <table class="table table-bordered" style="">
+                                        <thead>
+                                            <tr>
+                                                <th>S. No</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Place</th>
+                                                <th>Contact</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Harshavardhan</td>
+                                                <td>harshavb-8@gmail.com</td>
+                                                <td>Delhi</td>
+                                                <td>+91 1234 567 890</td>
+                                                <td>
+                                                    <a class="btn btn-primary btn-md" href="mailto:20h51a6699@cmrcet.ac.in">contact</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,55 @@
+{% extends "dash_base.html" %} {% load static %} {% block title %} Mali Express - Tableau de bord {% endblock %} {% block css_block %}
+<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" /> {% endblock %} {% block content %} {% include 'dash_menu.html' %}
+<div id="layoutSidenav_content">
+    <sibody>
+    </sibody>
+    <footer class="footer-admin mt-auto footer-light">
+        <div class="container-xl px-4">
+            <div class="row">
+                <div class="col-md-6 small">Copyright &copy; Cardio Analyx Inc 2022</div>
+                <div class="col-md-6 text-md-end small">
+                    <a href="#!">
+                        Privacy Policy
+                    </a> &middot;
+                    <div id="google_translate_element"></div>
+                    <a href="#!">Terms and Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+{% endblock %} {% block script %}
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        $.when(
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT
+            }, 'google_translate_element')
+        ).done(function() {
+            var select = document.getElementsByClassName('goog-te-combo')[27];
+            select.selectedIndex = 1;
+            select.addEventListener('click', function() {
+                select.dispatchEvent(new Event('change'));
+            });
+            select.click();
+        });
+    }
+</script>
+<style type="text/css">
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    }
+    
+    body {
+        top: 0px !important;
+    }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+<script>
+    var siJs = new SiJs()
+    siJs.route('new_analyse/')
+</script>
+{% endblock %}

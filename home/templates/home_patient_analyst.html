@@ -1,0 +1,463 @@
+{% extends "home_base.html" %}
+{% load static %}
+{% block content %}
+
+
+<main id="main" style="width: 100%" class="hero">
+
+
+<div>
+	<a href="/"><span class="fa fa-close back_button"></span></a>
+</div>
+
+	<div id="content">
+    <section id="index0" class="values">
+      <div class="container">
+        <header class="section-header">
+          <h2></h2>
+          <p>Cardiomegaly test</p>
+        </header> 
+        <div class="row">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            
+          </div>
+
+          <div class="col-lg-8 mt-8 mt-lg-0"  data-aos-delay="400">
+            <div class="">
+              <img src="{% static 'assets/img/values-3.png' %}" class="img-fluid" alt="">
+              <center>
+                 <a href="javascript:next()" class="smart scrollto d-inline-flex align-items-center justify-content-center align-self-center" style="height: 50px;">
+                  <span>Start test<i class="bi bi-arrow-right"></i></span>
+
+                </a>
+              </center>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="index1" style="visibility: hidden; display: none; padding: 20px" class="values" class="">
+      <div class="row align-items-center justify-content-evenly">
+        <div class="col-lg-6" style="float: center">
+          <header class="section-header">
+            <p>General information</p>
+          </header> 
+          <div>
+            <div class="row justify-content-center">
+              <form>
+                <div class="row">
+                  <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                 <label for="email">First name</label>
+                 <input class="form-input text_input" type="text" name="email" id="email">
+              </div>
+              <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                 <label for="email">Last name</label>
+                 <input class="form-input text_input" type="text" name="email" id="email">
+              </div>
+                  
+                </div>
+              <div class="form-group">
+                 <label for="email">Email</label>
+                 <input class="form-input text_input" type="email" name="email" id="email">
+              </div>
+            </form>
+            <div class="row">
+              <br>
+             <center> 
+              <button class="btn btn-lg btn-primary" style="float: center; width: 100px;" onclick="next()">Next</button>
+            </center>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="index2" style="visibility: hidden; display: none;" class="values">
+      <div class="row align-items-center justify-content-evenly">
+        <header class="section-header">
+            <p>Are you hero ?</p>
+          </header> 
+          <div class="row justify-content-center">
+            <div class="col-lg-4">
+              <div class="form">
+                <label>
+                  <input type="radio" name="radio" style="height: 50px;" />
+                  <span>Yes !!!!</span>
+                </label>
+                <label>
+                  <input type="radio" name="radio"/>
+                  <span>No 😔</span>
+                </label>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+    <section id="radio0" style="visibility: hidden; display: none;" class="values">
+      <div class="container">
+        <header class="section-header">
+          <p>Upload your X-Ray image</p>
+        </header> 
+        <div>
+          <form id="file-upload-form" class="uploader">
+            <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+
+            <label for="file-upload" id="file-drag">
+              <img id="file-image" src="#" alt="Preview" class="hidden">
+              <div id="start">
+                <i class="fa fa-download" aria-hidden="true"></i>
+                <div>Select a file or drag here</div>
+                <div id="notimage" class="hidden">Please select an image</div>
+                <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+              </div>
+              <div id="response" class="hidden">
+                <div id="messages"></div>
+                <progress class="progress" id="file-progress" value="0">
+                  <span>0</span>%
+                </progress>
+              </div>
+            </label>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section id="radio1" style="visibility: hidden; display: none;" class="values">
+      <div class="container">
+        <header class="section-header">
+          <h2>TEST 2</h2>
+          <p>Cardiomegaly <br> laborum et dicta</p>
+        </header> 
+      </div>
+    </section>
+    <section id="form0" style="visibility: hidden; display: none;" class="values">
+      <div class="container">
+        <header class="section-header">
+          <h2>Form</h2>
+          <p>Cardiomegaly <br> laborum et dicta</p>
+        </header> 
+      </div>
+    </section>
+    <section id="form2" style="visibility: hidden; display: none;" class="values">
+      <div class="container">
+        <header class="section-header">
+          <h2>TEST 2</h2>
+          <p>Cardiomegaly <br> laborum et dicta</p>
+        </header> 
+      </div>
+    </section>
+  </div>
+</main>
+
+
+<style type="text/css">
+  form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.375em;
+  /* Accessible outline */
+  /* Remove comment to use */
+  /*
+    &:focus-within {
+        outline: .125em solid $primary-color;
+    }
+  */
+}
+label input {
+  position: absolute;
+  left: -9999px;
+}
+label input:checked + span {
+  background-color: #d6d6e5;
+}
+label input:checked + span:before {
+  box-shadow: inset 0 0 0 0.4375em #00005c;
+}
+label span {
+  display: flex;
+  align-items: center;
+  padding: 0.375em 0.75em 0.375em 0.375em;
+  border-radius: 99em;
+  transition: 0.25s ease;
+}
+label span:hover {
+  background-color: #d6d6e5;
+}
+label span:before {
+  display: flex;
+  flex-shrink: 0;
+  content: "";
+  background-color: #fff;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  margin-right: 0.375em;
+  transition: 0.25s ease;
+  box-shadow: inset 0 0 0 0.125em #00005c;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+	a {
+		text-decoration: none;
+	}
+	.back_button {
+		font-size: 32px;
+		position: fixed;
+		padding: 20px;
+		padding-left: 30px;
+		color: #4154f1;
+	}
+  .smart {
+    margin-top: 30px;
+    line-height: 0;
+    padding: 15px 40px;
+    border-radius: 4px;
+    transition: 0.5s;
+    color: #fff;
+    background: #4154f1;
+    box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
+  }
+
+.background {
+  width: 100%;
+  height: 100%;
+  color: lightgrey;
+}
+.box {
+  color: black;
+  background: #f7f7f7;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  min-height: 400px;
+  box-shadow: 0 0 1px #ccc;
+  border: 1px solid #ccc;
+  border-radius: 13px;
+  padding: 20px;
+  clip: auto;
+}
+.box p {
+  font-size: 18px;
+}
+.box label {
+  font-size: 21px;
+}
+.box_content {
+  padding: 20px;
+}
+input.text_input {
+  width: 100%;
+  height: 50px;
+  margin: 10px;
+  margin-left: 0px;
+  padding: 10px;
+  font-size: 21px;
+  font-family: Arial;
+  border: 2px solid #1e0427;
+  border-radius: 8px;
+}
+.boxBottom {
+  background: #d0d0d0; /* #fccd0d; */
+  border-top: 2px solid #d0d0d0;
+  position: absolute;
+  border-bottom-left-radius: 13px;
+  border-bottom-right-radius: 13px;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 100.4%;
+  padding: 20px;
+  margin: 0px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.boxBottom button {
+  background: white;
+  color: black;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Arial;
+  width: 120px;
+  border-radius: 13px;
+  border: 1px solid #d0d0d0;
+}
+.boxBottom button#validate {
+  width: 200px;
+}
+.boxBottom button:hover {
+  background: #6d727d; /* #fc7935; */
+  color: white;
+  border: 0px solid black;
+}
+@media screen and (max-width: 600px) {
+  body {
+    margin: 0px;
+    max-height: 100%;
+  }
+  .box {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+  }
+  .boxBottom {
+    height: 90px;
+    border-radius: 0px;
+  }
+  .box_content {
+    padding: 15px;
+  }
+}
+label {
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.375em;
+}
+label input {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  left: -9999px;
+}
+label input:checked + span {
+  width: 100%;
+  height: 50px;
+  background-color: #d6d6e5;
+}
+label input:checked + span:before {
+  box-shadow: inset 0 0 0 0.4375em #00005c;
+}
+label span {
+  display: flex;
+  align-items: center;
+  padding: 0.375em 0.75em 0.375em 0.375em;
+  border-radius: 99em;
+  transition: 0.25s ease;
+}
+label span:hover {
+  width: 100%;
+  background-color: #d6d6e5;
+}
+label span:before {
+  display: flex;
+  flex-shrink: 0;
+  content: "";
+  background-color: #fff;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  margin-right: 0.375em;
+  transition: 0.25s ease;
+  box-shadow: inset 0 0 0 0.125em #00005c;
+}
+.alert {
+  margin: auto;
+  z-index: 2;
+}
+.slide-in-top {
+  -webkit-animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+/**
+* ----------------------------------------
+* animation slide-in-top
+* ----------------------------------------
+*/
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+</style>
+  
+<script type="text/javascript">
+
+  var pages = ["index0", "index1", "index2", "radio0", "radio1", "form0", "form1", "form2"]
+  var current = 0
+
+  function next() {
+    let prev = document.getElementById(pages[current])
+    prev.style.visibility = 'hidden'
+    prev.style.display = 'none'
+    current++
+
+    let next = document.getElementById(pages[current])
+    next.style.visibility = 'visible'
+    next.style.display = 'block'
+  }
+
+  function prev() {
+    let cur = document.getElementById(pages[current])
+    cur.style.visibility = 'hidden'
+    cur.style.display = 'none'
+    current--
+
+    let next = document.getElementById(pages[current])
+    next.style.visibility = 'visible'
+    next.style.display = 'block'
+  }
+
+  function goTo(index) {
+    let cur = document.getElementById(pages[current])
+    cur.style.visibility = 'hidden'
+    cur.style.display = 'none'    
+    
+    let next = document.getElementById(pages[index])
+    next.style.visibility = 'visible'
+    next.style.display = 'block'
+  }
+</script>
+{% endblock %}

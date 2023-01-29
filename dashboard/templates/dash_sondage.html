@@ -1,0 +1,58 @@
+{% extends "dash_base.html" %}
+{% load static %}
+{% block content %}
+<!-- Page Wrapper -->
+<div id="wrapper">
+    {% include 'dash_menu.html' %}
+    <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+            <!-- Topbar -->
+            {% include 'dash_top_menu.html' %}
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Gestion des sondages</h1>
+                    <a href="#" class="d-none d-sm-inline-block btn btn-md btn-primary shadow-md">
+                        <i class="fas fa-plus fa-sm text-white-50"></i> Créer un sondage
+                    </a>
+                </div>
+                <div class="row">
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="card shadow mb-1 col-xl-3 col-md-3" style="padding: 0px;">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Vos Sondages</h6>
+                        </div>
+                        <div class="card-body" style="padding: 15px;padding-top: 15px;">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 mb-4">
+                                    <table class="table table-lg">
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding: 0px;"><button class="btn btn-primary col-12 text-left" style="width: 100%; height: 60px;padding-left: 15px;">InDev Group <span class="fa fa-arrow-right" style="float:right;margin-top: 5px;margin-right: 15px;"></span></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 0px;"><button class="btn col-12 text-left" style="width: 100%; height: 60px;padding-left: 15px;">Telegram 2022 program<span class="fa fa-arrow-right" style="float:right;margin-top: 5px;margin-right: 15px;"></span></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 0px;"><button class="btn col-12 text-left" style="width: 100%; height: 60px;padding-left: 15px;">Avis de nouvelle ans<span class="fa fa-arrow-right" style="float:right;margin-top: 5px;margin-right: 15px;"></span></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+<script>
+var siJs = new SiJs()
+console.log('all done')
+//siJs.route('/client/sondage_content/')
+</script>
+{% endblock %}

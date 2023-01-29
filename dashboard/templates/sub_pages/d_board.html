@@ -1,0 +1,72 @@
+{% load static %}
+<main>
+    <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+        <div class="container-xl px-4">
+            <div class="page-header-content pt-4">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-auto mt-4">
+                        <h1 class="page-header-title">
+                            <div class="page-header-icon"><i data-feather="activity"></i></div>
+                            Tableau de board
+                        </h1>
+                        <div class="page-header-subtitle">Resumé des dernière activité</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main page content-->
+    <div class="container-xl px-4 mt-n10">
+        <div class="row">
+            <div class="col-xl-4 mb-4">
+                <!-- Dashboard example card 1-->
+                <a class="card lift h-100" href="#!">
+                    <div class="card-body d-flex justify-content-center flex-column">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="me-3">
+                                <i class="feather-xl text-primary mb-3" data-feather="package"></i>
+                                <h5><h2>78</h2>dfs jk <br>sdjljfhh </h5>
+                            </div>
+                            <img src="{% static 'assets/img/illustrations/browser-stats.svg' %}" alt="..." style="width: 8rem" />
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-4 mb-4">
+                <!-- Dashboard example card 2-->
+                <a class="card lift h-100" href="#!">
+                    <div class="card-body d-flex justify-content-center flex-column">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="me-3">
+                                <i class="feather-xl text-secondary mb-3" data-feather="user"></i>
+                                <h5>Utilisateurs</h5>
+                                <div class="text-muted small">Gestion des utilisateurs et profil</div>
+                            </div>
+                            <img src="{% static 'assets/img/illustrations/processing.svg' %}" alt="..." style="width: 8rem" />
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-4 mb-4">
+                <!-- Dashboard example card 3-->
+                <a class="card lift h-100" href="#!">
+                    <div class="card-body d-flex justify-content-center flex-column">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="me-3">
+                                <i class="feather-xl text-green mb-3" data-feather="database"></i>
+                                <h5>Data</h5>
+                                <div class="text-muted small">Gestion & Administration et traitement des données</div>
+                            </div>
+                            <img src="{% static 'assets/img/illustrations/windows.svg' %}" alt="..." style="width: 8rem" />
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+    
+
+<script src="{% static 'assets/demo/chart-area-demo.js' %}"></script>
+<script src="{% static 'assets/demo/chart-pie-demo.js' %}"></script>
+<script src="{% static 'js/datatables/datatables-simple-demo.js' %}"></script>

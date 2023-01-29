@@ -1,0 +1,293 @@
+{% extends "home_base.html" %}
+{% load static %}
+{% block content %}
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="/" class="logo d-flex align-items-center">
+        <img src="{% static 'assets/img/logo_blank.png' %}" alt="">
+        <span>Cardio Analyx</span>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">Analyze</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          
+          {% if request.user.is_authenticated %}
+            <li><a class="getstarted scrollto" href="/dashboard/">Tableau de bord</a></li>
+          {% else %}
+            <li><a class="getstarted btn-get-started scrollto" href="/doctor_signup">Register</a></li>
+          {% endif %}
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+      </div>
+      </header><!-- End Header -->
+          <section id="register" class="about register hero" style="">
+            <div class="container" data-aos="fade-up">
+              <div class="row p-5">
+                <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                  <div class="">
+                    <div class="row justify-content-center align-items-center ">
+                      <div class="col-md-10 p-5 shadow-sm border rounded-5 border-primary bg-white">
+                        {% if error != "" %}
+                          <center><span class="alert alert-danger w-100" style="width: 100%">{{ error }}</span></center>
+                        {% endif %}
+                        <h2 class="text-center mb-4 text-primary">Register Form</h2>
+
+                        <form action="" method="POST">
+                          {% csrf_token %}
+                          <div class="row">
+                            <div class="mb-3 col-lg-6">
+                              <label for="exampleInputEmail1" class="form-label">First name</label>
+                              <input type="text" class="form-control border border-primary" id="name" name="first_name" aria-describedby="emailHelp" required>
+                              {{ form.first_name.errors }}
+                            </div>
+                            <div class="mb-3 col-lg-6">
+                              <label for="exampleInputEmail1" class="form-label">Last name</label>
+                              <input type="text" class="form-control border border-primary" id="name" name="last_name" aria-describedby="emailHelp" required>
+                              {{ form.last_name.errors }}
+                            </div>
+                          </div>
+                          <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email</label>
+                            <input type="email" class="form-control border border-primary" id="username" name="email" aria-describedby="emailHelp" required>
+                            {{ form.email.errors }}
+                          </div>
+                          <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control border border-primary" id="exampleInputPassword1" name="password" required>
+                            {{ form.password1.errors }}
+                          </div>
+                          <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Confirm password</label>
+                            <input type="password" class="form-control border border-primary" id="exampleInputPassword1" name="password_confirm" required>
+                            {{ form.password2.errors }}
+                          </div>
+                          <div class="d-grid ">
+                            <button class="btn btn-primary " type="submit">Register</button>
+                          </div>
+                        </form>
+                        <div class="mt-3 ">
+                          <p class="mb-0 text-center ">You have an account? <a href="/patient_login/" class="text-primary fw-bold ">Login</a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 d-flex align-items-center " data-aos="zoom-out " data-aos-delay="200 ">
+                  <img src="/static/assets/img/login.png " class="img-fluid " alt=" ">
+                </div>
+              </div>
+            </div>
+            <br>
+          </section>
+      
+      <!-- ======= Footer ======= -->
+      <footer id="footer" class="footer">
+        <div class="container">
+          <div class="copyright">
+            &copy; Copyright <strong><span>Cardio Analyx</span></strong>. All Rights Reserved <div id="google_translate_element"></div>
+          </div>
+        </div>
+      </footer>
+      <style type="text/css">
+     
+      </style>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script type="text/javascript">
+      var pages = ["about", "loginpage", "registerpage", "index1", "progress", "result", "ask1", "ask2", "ask3", "ask4", "ask5", "ask6", "ask7", "ask8", "ask9", "ask10"]
+      var current = 0
+      function next() {
+      let prev = document.getElementById(pages[current])
+      prev.style.visibility = 'hidden'
+      prev.style.display = 'none'
+      current++
+      let next = document.getElementById(pages[current])
+      next.style.visibility = 'visible'
+      next.style.display = 'block'
+      }
+      function prev() {
+      let cur = document.getElementById(pages[current])
+      cur.style.visibility = 'hidden'
+      cur.style.display = 'none'
+      current--
+      let next = document.getElementById(pages[current])
+      next.style.visibility = 'visible'
+      next.style.display = 'block'
+      }
+      function goTo(index) {
+      let cur = document.getElementById(pages[current])
+      cur.style.visibility = 'hidden'
+      cur.style.display = 'none'
+      
+      let next = document.getElementById(pages[index])
+      next.style.visibility = 'visible'
+      next.style.display = 'block'
+      current = index
+      next.scrollIntoView();
+      }
+      function ekUpload(){
+      function Init() {
+      var fileSelect    = document.getElementById('file-upload'),
+      fileDrag      = document.getElementById('file-drag'),
+      submitButton  = document.getElementById('submit-button');
+      fileSelect.addEventListener('change', fileSelectHandler, false);
+      }
+      function fileDragHover(e) {
+      var fileDrag = document.getElementById('file-drag');
+      e.stopPropagation();
+      e.preventDefault();
+      fileDrag.className = (e.type === 'dragover' ? 'hover' : 'modal-body file-upload');
+      }
+      function fileSelectHandler(e) {
+      // Fetch FileList object
+      var files = e.target.files || e.dataTransfer.files;
+      // Cancel event and hover styling
+      fileDragHover(e);
+      // Process all File objects
+      parseFile(files[0]);
+      }
+      function output(msg) {
+      // Response
+      var m = document.getElementById('messages');
+      m.innerHTML = msg;
+      }
+      function parseFile(file) {
+      output(
+      '<strong>' + encodeURI(file.name) + '</strong>'
+      );
+      
+      // var fileType = file.type;
+      // console.log(fileType);
+      var imageName = file.name;
+      var isGood = (/\.(?=gif|jpg|png|jpeg|pdf)/gi).test(imageName);
+      if (isGood) {
+      document.getElementById("alert_no_input").style.display = 'none'
+      document.getElementById('start').classList.add("hidden");
+      document.getElementById('response').classList.remove("hidden");
+      document.getElementById('notimage').classList.add("hidden");
+      }
+      else {
+      document.getElementById('file-image').classList.add("hidden");
+      document.getElementById('notimage').classList.remove("hidden");
+      document.getElementById('start').classList.remove("hidden");
+      document.getElementById('response').classList.add("hidden");
+      document.getElementById("file-upload-form").reset();
+      }
+      }
+      if (window.File && window.FileList && window.FileReader) {
+      Init();
+      } else {
+      document.getElementById('file-drag').style.display = 'none';
+      }
+      }
+      
+      ekUpload();
+      function goToloader() {
+      goTo(2)
+      setInterval(function(){
+      goTo(3)
+      const ctx = document.getElementById('myChart');
+      new Chart(ctx, {
+      type: 'doughnut',
+      weight: 20,
+      data:{
+      labels: [
+      'True',
+      'False',
+      ],
+      datasets: [{
+      label: '',
+      data: [85, 15],
+      backgroundColor: [
+      'red',
+      'lightgreen',
+      ],
+      hoverOffset: 4
+      }]
+      },
+      options: {
+      responsive: true,
+      plugins: {
+      legend: {
+      position: 'top',
+      },
+      title: {
+      display: true,
+      text: ''
+      }
+      }
+      }
+      });
+      }, 500)
+      }
+      function submit_xray() {
+      let doc = document.getElementById("file-upload").value
+      if(doc  == '') {
+      document.getElementById("alert_no_input").style.display = 'block'
+      } else {
+      // submitting
+      document.getElementById("alert_no_input").style.display = 'none'
+      goTo(2)
+      setInterval(function(){
+      goTo(3)
+      const ctx = document.getElementById('myChart');
+      new Chart(ctx, {
+      type: 'doughnut',
+      weight: 20,
+      data:{
+      labels: [
+      'True',
+      'False',
+      ],
+      datasets: [{
+      label: '',
+      data: [85, 15],
+      backgroundColor: [
+      'red',
+      'lightgreen',
+      ],
+      hoverOffset: 4
+      }]
+      },
+      options: {
+      responsive: true,
+      plugins: {
+      legend: {
+      position: 'top',
+      },
+      title: {
+      display: true,
+      text: ''
+      }
+      }
+      }
+      });
+      }, 500)
+      }
+      }
+      </script>
+      
+      <!-- Main Script for TranslateElement -->
+      <script type="text/javascript">
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+      function translateLanguage(lang)
+      {
+      googleTranslateElementInit();
+      var $frame = $('.goog-te-menu-frame:first');
+      if (!$frame.size()) {
+      alert("Error: Could not find Google translate frame.");
+      return false;
+      }
+      $frame.contents().find('.goog-te-menu2-item span.text:contains(' + lang + ')').get(0).click();
+      return false;
+      }
+      $(function(){
+      $('.selectpicker').selectpicker();
+      });
+      </script>
+      <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+    {% endblock %}
